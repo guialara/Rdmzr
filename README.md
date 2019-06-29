@@ -3,7 +3,7 @@ This application is created to practice my skills in AngularJS.
 
 This is a developing application.
 
-##TO DO:
+#TO DO
 
 1. Update the application to have mobile view.
 2. Use FireBase for data and possible use of login for users (for further studying).
