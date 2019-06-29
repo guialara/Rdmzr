@@ -49,7 +49,11 @@
                     <h5><strong>STEP 2:</strong> Once all items are included in list below, click <strong>RANDOMIZE!</strong> Per button click, one item from this list is removed and added to <strong>RESULT</strong> box.</h5>
                     <form>
                         <div class="input-group btn-block" ng-repeat="item in items">
-                            <button class="btn btn-danger input-group-addon" ng-click="removeItem(item)"><i class="glyphicon glyphicon-remove"></i></button>
+                            <span class="input-group-btn">
+                            <button class="btn btn-default" ng-click="removeItem(item)">
+                            <i class="glyphicon glyphicon-remove"></i>
+                            </button>
+                            </span>
                             <input type="text" class="form-control" ng-model="listItem" ng-disabled="true" ng-value="item" />
                         </div>
                     </form>
@@ -73,7 +77,9 @@
                     <h5><strong>STEP 3:</strong> Check out the list of randomized items below. You can also click the <strong>CLEAR RESULTS</strong> button to remove all items in the <strong>RESULT</strong> box.</h5>
                     <form>
                         <div class="input-group btn-block" ng-repeat="result in results">
-                            <button class="btn btn-danger input-group-addon" ng-click="removeResultItem(result)"><i class="glyphicon glyphicon-remove"></i></button>
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" ng-click="removeResultItem(result)"><i class="glyphicon glyphicon-remove"></i></button>
+                            </span>
                             <input type="text" class="form-control" ng-model="resultItem" ng-disabled="true" ng-value="result" />
                         </div>
                     </form>
