@@ -48,8 +48,8 @@
                     <h5><strong>STEP 2:</strong> Your tasks will appear in the list below. Each task are a button that can be clicked to indicate that they are completed.</h5>
                     <form>
                         <div class="input-group btn-block" ng-repeat="task in tasks" ng-model="taskIP">
-                            <span class="input-group-addon">
-                            <button type="button" class="btn btn-danger btn-sm" ng-click="removeInProgress(task)">
+                            <span class="input-group-addon btn btn-danger btn-sm">
+                            <button type="button" ng-click="removeInProgress(task)">
                                 <i class="glyphicon glyphicon-remove"></i>
                             </button>
                             </span>
