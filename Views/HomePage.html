@@ -1,0 +1,62 @@
+﻿<div>
+    <nav class ="navbar navbar-inverse">
+        <div class ="container-fluid">
+            <div class ="navbar-header">
+                <a class ="navbar-brand" href="#/!"><strong><i>A n g u l a r E x</i></strong></a>
+            </div>
+            <ul class ="nav navbar-nav navbar-right">
+                <li class="active"><a href="#/!">Home</a></li>
+                <li><a href="#!about">About</a></li>
+                <li ng-show="withAccess"><a href="#!tracker">Tracker</a></li>
+                <li ng-show="withAccess"><a href="#!random">Randomizer</a></li>
+                <li ng-show="noAccess"><a href="#!login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li ng-show="withAccess"><a href="" ng-click="userlogout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav> 
+    <div class="jumbotron">
+        <h1 class="text-center"><strong><i>A n g u l a r E x</i></strong></h1>
+        <div ng-show="withAccess">
+            <h3 class="text-center">Welcome <strong>{{username}}</strong>!</h3>
+        </div>
+    </div>
+
+    <div class="container" ng-show="noAccess">
+        <h2 class="text-center">To see what this application can do, please login.</h2>
+        </br>
+        <a class="btn btn-info col-sm-12 text-center" href="#!login"><h2><strong>L O G I N</strong></h2></a>
+    </div>
+    
+    <div class="container" ng-show="withAccess">
+        <div class="container col-sm-6" >
+            <div class="panel panel-default" style="height:300px;">
+                <div class="panel-heading">
+                    <h2 class="text-center"><i class="glyphicon glyphicon-tasks"></i><strong> TRACKER</strong></h2>
+                </div>
+                <div class="panel-body">
+                    <h3>Using Tracker, you can add your tasks for the day and separate the task that are already completed.</h3>
+                </div>
+                <div class="panel-body">
+                    <a class="btn btn-success btn-block" href="#!tracker">
+                        <span class=" glyphicon glyphicon-ok"></span> <strong>TRY IT!</strong>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container col-sm-6" >
+            <div class="panel panel-default" style="height:300px;">
+                <div class="panel-heading">
+                    <h2 class="text-center"><i class="glyphicon glyphicon-random"></i><strong> RANDOMIZER</strong></h2>
+                </div>
+                <div class="panel-body">
+                    <h3>Using Randomizer, you can add a number of items, creating a list, and randomly select a choice.</h3>
+                </div>
+                <div class="panel-body">
+                    <a class="btn btn-success btn-block" href="#!random">
+                        <span class=" glyphicon glyphicon-ok"></span> <strong>TRY IT!</strong>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

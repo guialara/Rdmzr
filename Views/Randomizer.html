@@ -1,0 +1,92 @@
+﻿<div>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#/!"><strong><i>A n g u l a r E x</i></strong></a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#/!">Home</a></li>
+                <li><a href="#!about">About</a></li>
+                <li><a href="#!tracker">Tracker</a></li>
+                <li class="active"><a href="#!random">Randomizer</a></li>
+                <li><a href="" ng-click="userlogout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="text-center"><i><strong>R A N D O M I Z E R</strong></i></h1>
+            <p>In this page, you can add items that you want to randomize. Add all items first then click the randomizer button. Please be reminded that the app performance is limited and can only select one random item from the list you provided.</p>
+            <p>Please be reminded that once you refreshed the page, you will automatically logout and the items you added will be gone.</p>
+        </div>
+        <div class="container col-sm-4">
+            <div class="panel panel-info" style="min-height:260px">
+                <div class="panel-heading">
+                    <h4 class="text-center"><strong>ADD ITEMS</strong></h4>
+                </div>
+                <div class="panel-body">
+                    <h5><strong>STEP 1:</strong> Add items to be randomized.</h5>
+                    <form>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                            <input type="text" class="form-control" ng-model="addedItem" />
+                        </div>
+                        </br>
+                        <button type="button" class="btn btn-info btn-block" ng-click="addItem()">
+                            <span class=" glyphicon glyphicon-plus-sign"></span> <strong>ADD ITEM</strong>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="container col-sm-4">
+            <div class="panel panel-warning" style="min-height:225px">
+                <div class="panel-heading">
+                    <h4 class="text-center"><strong>RANDOMIZE!</strong> <span class="badge" ng-show="items.length != 0"> {{items.length}} </span></h4>
+                </div>
+                <div class="panel-body" style="max-height:150px; overflow-y:auto;">
+                    <h5><strong>STEP 2:</strong> Once all items are included in list below, click <strong>RANDOMIZE!</strong> Per button click, one item from this list is removed and added to <strong>RESULT</strong> box.</h5>
+                    <form>
+                        <div class="input-group btn-block" ng-repeat="item in items">
+                            <button class="btn btn-danger input-group-addon" ng-click="removeItem(item)"><i class="glyphicon glyphicon-remove"></i></button>
+                            <input type="text" class="form-control" ng-model="listItem" ng-disabled="true" ng-value="item" />
+                        </div>
+                    </form>
+                </div>
+                <div class="panel-body">
+                    <button type="button" class="btn btn-warning btn-block" ng-click="randomize()">
+                        <span class=" glyphicon glyphicon-random"></span> <strong>RANDOMIZE ITEMS!</strong>
+                    </button>
+                    <button type="button" class="btn btn-danger btn-block" ng-click="clearItems()">
+                        <span class=" glyphicon glyphicon-remove-sign"></span> <strong>CLEAR ITEMS</strong>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="container col-sm-4" >
+            <div class="panel panel-success" style="min-height:225px">
+                <div class="panel-heading">
+                    <h4 class="text-center"><strong>RESULT</strong> <span class="badge" ng-show="results.length != 0"> {{results.length}} </span></h4>
+                </div>
+                <div class="panel-body" style="max-height:150px; overflow-y:auto;">
+                    <h5><strong>STEP 3:</strong> Check out the list of randomized items below. You can also click the <strong>CLEAR RESULTS</strong> button to remove all items in the <strong>RESULT</strong> box.</h5>
+                    <form>
+                        <div class="input-group btn-block" ng-repeat="result in results">
+                            <button class="btn btn-danger input-group-addon" ng-click="removeResultItem(result)"><i class="glyphicon glyphicon-remove"></i></button>
+                            <input type="text" class="form-control" ng-model="resultItem" ng-disabled="true" ng-value="result" />
+                        </div>
+                    </form>
+                </div>
+                <div class="panel-body">
+                    <button type="button" class="btn btn-primary btn-block" ng-click="returnResults()">
+                        <span class=" glyphicon glyphicon-arrow-left"></span> <strong>RETURN ITEMS</strong>
+                    </button>
+                    <button type="button" class="btn btn-danger btn-block" ng-click="clearResults()">
+                        <span class=" glyphicon glyphicon-remove-sign"></span> <strong>CLEAR RESULTS</strong>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+﻿<div>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#/!"><strong><i>A n g u l a r E x</i></strong></a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#/!">Home</a></li>
+                <li class="active"><a href="#!about">About</a></li>
+                <li ng-show="withAccess"><a href="#!tracker">Tracker</a></li>
+                <li ng-show="withAccess"><a href="#!random">Randomizer</a></li>
+                <li ng-show="noAccess"><a href="#!login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li ng-show="withAccess"><a href="" ng-click="userlogout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading"><h2>Hi <span ng-show="withAccess">{{username}}!</span><span ng-show="noAccess">Guest!</span> We are pleased to inform you about our site.</h2></div>
+            <div class="panel-body">
+                <h4>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</h4>
+            </div>
+        </div>
+    </div>
+</div>
