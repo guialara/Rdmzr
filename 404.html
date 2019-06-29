@@ -16,7 +16,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="JS/Application.js"></script>
     <style>
-        body{
+        html, body{
+            margin: 0;
+            padding: 0;
             height: 100%;
             background-color:lightgray;
         }
@@ -24,6 +26,9 @@
             height: 100%;
             min-height: 100%;
             position: relative;
+        }
+        #body{
+            padding-bottom: 40px;
         }
         .footer{
             position: absolute;
@@ -34,7 +39,7 @@
             background-color: black;
             z-index:1000;
             word-break: normal;
-        margin:0px;
+            margin:0px;
         }
         .footer-text{
             color: white;
@@ -43,12 +48,21 @@
         @media only screen and (max-width: 627px){
             .footer{
             height: 70px;
-        }
+            }
+            #body{
+                padding-bottom: 70px;
+            }
         }
     </style>
 </head>
 <body>
-    <div id="container" ng-view></div>
-    <footer class="footer"><p class="footer-text container text-center"><strong>Please be reminded that once you refresh any of the pages, you will automatically log out.</strong><p></footer>
+    <div id="container">
+        <div id="body" ng-view></div>
+        <footer class="footer">
+            <p class="footer-text container text-center">
+                <strong>Please be reminded that once you refresh any of the pages, you will automatically log out.</strong>
+            <p>
+        </footer>
+    <div>
 </body>
 </html>
