@@ -193,7 +193,7 @@ Application.controller("randomizerCtrl", function ($scope, $location) {
 
     $scope.returnResults = function () {
         if($scope.results.length != 0){
-            $scope.items = $scope.results;
+            $scope.items = $scope.items.unshift($scope.results);
             $scope.results = [];
         }
     }
