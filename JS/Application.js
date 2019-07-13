@@ -1,5 +1,6 @@
 ﻿var userName;
 var withAccess = false;
+var appName = "R d m z r";
 var Application = angular.module('Application', ["ngRoute"]);
 
 Application.config(function ($routeProvider, $locationProvider){
@@ -34,7 +35,9 @@ Application.config(function ($routeProvider, $locationProvider){
 Application.controller("appUsers", function ($scope, $location) {
     $scope.users = [{ name: 'Sample User', email: 'sample@abc.com', password: '123456' },
                     { name: 'Guia', email: 'gblara@sample.com', password: 'qazwsx' }];
+    $scope.appName = appName;
 
+    //Code block below is specifically for users that tend to type the link directly
     if (withAccess) {
         $location.path("/welcome");
     }
@@ -59,7 +62,9 @@ Application.controller("taskTracker", function ($scope, $location) {
     $scope.username = userName;
     $scope.tasks = [];
     $scope.completed = [];
+    $scope.appName = appName;
 
+    //Code block below is specifically for users that tend to type the link directly
     if (!withAccess) {
         $location.path("/noaccess");
     }
@@ -113,6 +118,7 @@ Application.controller("aboutApp", function ($scope, $location) {
     $scope.withAccess = withAccess;
     $scope.noAccess = !withAccess;
     $scope.username = userName;
+    $scope.appName = appName;
 
     $scope.userlogout = function () {
         withAccess = false;
@@ -124,6 +130,7 @@ Application.controller("homeCtrl", function ($scope, $location) {
     $scope.withAccess = withAccess;
     $scope.noAccess = !withAccess;
     $scope.username = userName;
+    $scope.appName = appName;
 
     $scope.userlogout = function () {
         withAccess = false;
@@ -132,6 +139,8 @@ Application.controller("homeCtrl", function ($scope, $location) {
 });
 
 Application.controller("noaccessCtrl", function ($scope, $location) {
+    $scope.appName = appName;
+    //Code block below is specifically for users that tend to type the link directly
     if (withAccess) {
         $location.path("/");
     }
@@ -140,7 +149,9 @@ Application.controller("noaccessCtrl", function ($scope, $location) {
 Application.controller("randomizerCtrl", function ($scope, $location) {
     $scope.items = [];
     $scope.results = [];
+    $scope.appName = appName;
 
+    //Code block below is specifically for users that tend to type the link directly
     if (!withAccess) {
         $location.path("/noaccess");
     }
