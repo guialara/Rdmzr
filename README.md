@@ -10,6 +10,14 @@ This is a developing application.
 * Add documentation to code.
 * Enable to export results of randomizer.
 * Enable to export data regarding task.
-* Update the application name in the app proper.
+* Update the application name in the app proper. - Completed
 * Possibility to migrate code/app to Angular (for further studying).
-* Update information in the application.
+* Update information in the application. - Completed
+
+### UPDATES:
+
+* Fixed issue encountered in Randomizer page and Task tracker page.
+* Updated the application name
+* Added some small comments in the JS file.
+* Updated some CSS for the jumbotron.
+* Updated about page for application information.
