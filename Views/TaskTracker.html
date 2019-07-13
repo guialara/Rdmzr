@@ -47,7 +47,7 @@
                 <div class="panel-body" style="max-height:200px; overflow-y:auto;">
                     <h5><strong>STEP 2:</strong> Your tasks will appear in the list below. Each task are a button that can be clicked to indicate that they are completed.</h5>
                     <form>
-                        <div class="input-group btn-block" ng-repeat="task in tasks" ng-model="taskIP">
+                        <div class="input-group btn-block" ng-repeat="task in tasks track by $index" ng-model="taskIP">
                             <span class="input-group-btn">
                             <button type="button" class="btn btn-default" ng-click="removeInProgress(task)">
                                 <i class="glyphicon glyphicon-remove"></i>
@@ -74,7 +74,7 @@
                 <div class="panel-body" style="max-height:200px; overflow-y:auto;">
                     <h5><strong>STEP 3:</strong> Your completed tasks are will appear in the list below. Click any of the completed task for it to go back to the <strong>IN PROGRESS</strong> box.</h5>
                     <form>
-                        <div class="input-group btn-block" ng-repeat="complete in completed" ng-model="compTsk">
+                        <div class="input-group btn-block" ng-repeat="complete in completed track by $index" ng-model="compTsk">
                             <span class="input-group-btn">
                             <button type="button" class="btn btn-default" ng-click="removeCompleted(complete)">
                                 <i class="glyphicon glyphicon-remove"></i>

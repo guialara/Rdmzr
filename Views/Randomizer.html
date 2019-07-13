@@ -48,7 +48,7 @@
                 <div class="panel-body" style="max-height:150px; overflow-y:auto;">
                     <h5><strong>STEP 2:</strong> Once all items are included in list below, click <strong>RANDOMIZE!</strong> Per button click, one item from this list is removed and added to <strong>RESULT</strong> box.</h5>
                     <form>
-                        <div class="input-group btn-block" ng-repeat="item in items">
+                        <div class="input-group btn-block" ng-repeat="item in items track by $index">
                             <span class="input-group-btn">
                             <button class="btn btn-default" ng-click="removeItem(item)">
                             <i class="glyphicon glyphicon-remove"></i>
@@ -76,7 +76,7 @@
                 <div class="panel-body" style="max-height:150px; overflow-y:auto;">
                     <h5><strong>STEP 3:</strong> Check out the list of randomized items below. You can also click the <strong>CLEAR RESULTS</strong> button to remove all items in the <strong>RESULT</strong> box.</h5>
                     <form>
-                        <div class="input-group btn-block" ng-repeat="result in results">
+                        <div class="input-group btn-block" ng-repeat="result in results track by $index">
                         <span class="input-group-btn">
                             <button class="btn btn-default" ng-click="removeResultItem(result)"><i class="glyphicon glyphicon-remove"></i></button>
                             </span>
